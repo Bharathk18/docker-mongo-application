@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+     - 27017:27017
+  docker-mangodb-application:
+      image: docker-mangodb-application:1.0
+      container_name: docker-mangodb-application
+      ports:
+        - 8080:8080
+      links:
+       - mongodb
